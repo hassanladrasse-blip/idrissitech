@@ -3,719 +3,527 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IdrissiTech - Solutions technologiques, Arduino, IoT, domotique et robotique.">
-    <title>IdrissiTech | Technologie & Innovation</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <title>IdrissiTech | Solutions Technologiques & Électronique</title>
 
-        html {
-            scroll-behavior: smooth;
-        }
+    <meta name="description"
+          content="IdrissiTech propose des solutions technologiques, domotique, Arduino, vidéosurveillance, réseaux et installations électroniques.">
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #172033;
-            background: #ffffff;
-            line-height: 1.6;
-        }
+    <meta name="keywords"
+          content="IdrissiTech, Arduino, Domotique, vidéosurveillance, réseau, électronique, Maroc">
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    <meta name="author" content="IdrissiTech">
 
-        /* NAVBAR */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255,255,255,0.96);
-            border-bottom: 1px solid #eeeeee;
-            backdrop-filter: blur(10px);
-        }
-
-        .navbar {
-            max-width: 1200px;
-            margin: auto;
-            padding: 18px 25px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 26px;
-            font-weight: 800;
-            color: #0b5cff;
-        }
-
-        .logo span {
-            color: #ff7a00;
-        }
-
-        nav {
-            display: flex;
-            gap: 28px;
-        }
-
-        nav a {
-            font-weight: 600;
-            color: #333;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #0b5cff;
-        }
-
-        .menu-btn {
-            display: none;
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-        /* HERO */
-        .hero {
-            min-height: 88vh;
-            display: flex;
-            align-items: center;
-            background:
-                radial-gradient(circle at 85% 20%, rgba(11,92,255,0.12), transparent 30%),
-                radial-gradient(circle at 10% 80%, rgba(255,122,0,0.10), transparent 30%),
-                #f7f9fc;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            width: 100%;
-            margin: auto;
-            padding: 80px 25px;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 6vw, 72px);
-            line-height: 1.05;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            color: #0b5cff;
-        }
-
-        .hero p {
-            font-size: 19px;
-            color: #5b6472;
-            max-width: 650px;
-            margin-bottom: 35px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 14px 25px;
-            border-radius: 8px;
-            font-weight: 700;
-            display: inline-block;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: #0b5cff;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(11,92,255,0.25);
-        }
-
-        .btn-secondary {
-            border: 2px solid #0b5cff;
-            color: #0b5cff;
-        }
-
-        .btn-secondary:hover {
-            background: #0b5cff;
-            color: white;
-        }
-
-        .tech-card {
-            min-height: 420px;
-            border-radius: 25px;
-            background: linear-gradient(145deg, #0b5cff, #072d80);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
-        }
-
-        .tech-card::before,
-        .tech-card::after {
-            content: "";
-            position: absolute;
-            border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.25);
-        }
-
-        .tech-card::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .tech-card::after {
-            width: 450px;
-            height: 450px;
-        }
-
-        .tech-icon {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-
-        .tech-icon .symbol {
-            font-size: 100px;
-        }
-
-        .tech-icon h2 {
-            font-size: 30px;
-        }
-
-        /* SECTIONS */
-        section {
-            padding: 90px 25px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 55px;
-        }
-
-        .section-title h2 {
-            font-size: 40px;
-            margin-bottom: 12px;
-        }
-
-        .section-title p {
-            color: #6b7280;
-        }
-
-        /* SERVICES */
-        .services {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .service-card {
-            padding: 35px 28px;
-            border: 1px solid #e9edf3;
-            border-radius: 16px;
-            background: white;
-            transition: 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-        }
-
-        .service-icon {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            margin-bottom: 12px;
-            font-size: 21px;
-        }
-
-        .service-card p {
-            color: #6b7280;
-        }
-
-        /* ABOUT */
-        .about {
-            background: #f7f9fc;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about h2 {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-
-        .about p {
-            color: #5f6877;
-            margin-bottom: 18px;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
-
-        .stat {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid #e8ecf2;
-        }
-
-        .stat strong {
-            display: block;
-            font-size: 35px;
-            color: #0b5cff;
-        }
-
-        /* PROJECTS */
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .project {
-            overflow: hidden;
-            border-radius: 16px;
-            border: 1px solid #e8ecf2;
-            background: white;
-        }
-
-        .project-image {
-            height: 210px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #eef3ff;
-            font-size: 65px;
-        }
-
-        .project-content {
-            padding: 25px;
-        }
-
-        .project-content h3 {
-            margin-bottom: 10px;
-        }
-
-        .project-content p {
-            color: #6b7280;
-        }
-
-        /* CONTACT */
-        .contact {
-            background: #0d1728;
-            color: white;
-        }
-
-        .contact .section-title p {
-            color: #aeb8c8;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .contact-info div {
-            margin-bottom: 25px;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 5px;
-        }
-
-        .contact-info p {
-            color: #b8c0ce;
-        }
-
-        form {
-            display: grid;
-            gap: 15px;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #334155;
-            border-radius: 8px;
-            background: #162236;
-            color: white;
-            outline: none;
-        }
-
-        textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #080f1c;
-            color: #9da8b8;
-            text-align: center;
-            padding: 25px;
-        }
-
-        footer span {
-            color: #0b5cff;
-        }
-
-        /* MOBILE */
-        @media (max-width: 850px) {
-
-            nav {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 25px;
-                border-bottom: 1px solid #eee;
-            }
-
-            nav.active {
-                display: flex;
-            }
-
-            .menu-btn {
-                display: block;
-            }
-
-            .hero-container,
-            .about-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                min-height: auto;
-            }
-
-            .tech-card {
-                min-height: 300px;
-            }
-
-            .services,
-            .projects {
-                grid-template-columns: 1fr;
-            }
-
-            .stats {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 500px) {
-            .stats {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 65px 18px;
-            }
-
-            .navbar {
-                padding: 15px 18px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <div class="navbar">
-        <a href="#home" class="logo">Idrissi<span>Tech</span></a>
+    <!-- ================= HEADER ================= -->
 
-        <nav id="nav">
-            <a href="#home">Accueil</a>
-            <a href="#services">Services</a>
-            <a href="#about">À propos</a>
-            <a href="#projects">Projets</a>
-            <a href="#contact">Contact</a>
-        </nav>
+    <header class="header">
 
-        <div class="menu-btn" onclick="toggleMenu()">☰</div>
-    </div>
-</header>
+        <div class="container nav">
 
-<main>
+            <a href="#home" class="logo">
+                Idrissi<span>Tech</span>
+            </a>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <div class="hero-container">
+            <nav class="navbar">
+                <a href="#home">Accueil</a>
+                <a href="#services">Services</a>
+                <a href="#about">À propos</a>
+                <a href="#projects">Projets</a>
+                <a href="#shop">Boutique</a>
+                <a href="#contact">Contact</a>
+            </nav>
 
-            <div>
-                <p style="color:#0b5cff;font-weight:700;">TECHNOLOGIE • INNOVATION • CRÉATIVITÉ</p>
+            <a href="#contact" class="nav-btn">
+                Nous contacter
+            </a>
 
-                <h1>
-                    Transformons les idées en
-                    <span>solutions technologiques.</span>
-                </h1>
-
-                <p>
-                    IdrissiTech accompagne les passionnés, étudiants
-                    et professionnels dans leurs projets électroniques,
-                    Arduino, IoT, robotique et domotique.
-                </p>
-
-                <div class="buttons">
-                    <a href="#services" class="btn btn-primary">
-                        Découvrir nos services
-                    </a>
-
-                    <a href="#contact" class="btn btn-secondary">
-                        Nous contacter
-                    </a>
-                </div>
-            </div>
-
-            <div class="tech-card">
-                <div class="tech-icon">
-                    <div class="symbol">⚙️</div>
-                    <h2>IdrissiTech</h2>
-                    <p>Technology & Innovation</p>
-                </div>
-            </div>
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
 
         </div>
-    </section>
 
-    <!-- SERVICES -->
-    <section id="services">
-        <div class="container">
+    </header>
 
-            <div class="section-title">
-                <h2>Nos Services</h2>
-                <p>Des solutions modernes pour vos projets technologiques.</p>
-            </div>
 
-            <div class="services">
+    <!-- ================= HERO ================= -->
 
-                <div class="service-card">
-                    <div class="service-icon">🔌</div>
-                    <h3>Arduino & Électronique</h3>
-                    <p>
-                        Conception et réalisation de projets électroniques
-                        avec Arduino et différents modules.
-                    </p>
-                </div>
+    <main>
 
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3>Domotique</h3>
-                    <p>
-                        Automatisation de votre maison avec IoT,
-                        capteurs et systèmes intelligents.
-                    </p>
-                </div>
+        <section id="home" class="hero">
 
-                <div class="service-card">
-                    <div class="service-icon">🤖</div>
-                    <h3>Robotique</h3>
-                    <p>
-                        Création et programmation de robots et systèmes
-                        automatisés pour l'apprentissage et l'innovation.
-                    </p>
-                </div>
+            <div class="container hero-content">
 
-                <div class="service-card">
-                    <div class="service-icon">📡</div>
-                    <h3>IoT</h3>
-                    <p>
-                        Solutions connectées basées sur ESP32,
-                        capteurs et communication sans fil.
-                    </p>
-                </div>
+                <div class="hero-text">
 
-                <div class="service-card">
-                    <div class="service-icon">💻</div>
-                    <h3>Développement Web</h3>
-                    <p>
-                        Création de sites web modernes, rapides,
-                        responsives et adaptés aux besoins.
-                    </p>
-                </div>
+                    <span class="badge">
+                        🚀 Innovation • Technologie • Solutions
+                    </span>
 
-                <div class="service-card">
-                    <div class="service-icon">🎓</div>
-                    <h3>Formation</h3>
-                    <p>
-                        Accompagnement et initiation à Arduino,
-                        électronique, programmation et robotique.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about" id="about">
-        <div class="container">
-
-            <div class="about-grid">
-
-                <div>
-                    <h2>À propos d'IdrissiTech</h2>
+                    <h1>
+                        Des solutions technologiques
+                        <span>pour votre avenir.</span>
+                    </h1>
 
                     <p>
-                        IdrissiTech est un espace dédié à la technologie,
-                        à l'électronique et à l'innovation.
+                        IdrissiTech vous accompagne dans la conception,
+                        l'installation et la vente de solutions technologiques,
+                        électroniques et domotiques.
                     </p>
 
-                    <p>
-                        Notre objectif est de rendre les nouvelles
-                        technologies accessibles et de transformer
-                        les idées en projets concrets.
-                    </p>
+                    <div class="hero-buttons">
 
-                    <a href="#contact" class="btn btn-primary">
-                        Parlons de votre projet
-                    </a>
-                </div>
+                        <a href="#services" class="btn primary">
+                            Découvrir nos services
+                        </a>
 
-                <div class="stats">
+                        <a href="#contact" class="btn secondary">
+                            Nous contacter
+                        </a>
 
-                    <div class="stat">
-                        <strong>01</strong>
-                        Innovation
                     </div>
 
-                    <div class="stat">
-                        <strong>24/7</strong>
-                        Passion
-                    </div>
+                </div>
 
-                    <div class="stat">
-                        <strong>IoT</strong>
-                        Technologie
-                    </div>
 
-                    <div class="stat">
-                        <strong>∞</strong>
-                        Idées
+                <div class="hero-card">
+
+                    <div class="tech-icon">⚡</div>
+
+                    <h3>Smart Technology</h3>
+
+                    <p>
+                        Arduino • ESP32 • IoT • Domotique
+                    </p>
+
+                    <div class="tech-items">
+                        <span>Arduino</span>
+                        <span>IoT</span>
+                        <span>Smart Home</span>
+                        <span>Security</span>
                     </div>
 
                 </div>
 
             </div>
-        </div>
-    </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-        <div class="container">
+        </section>
 
-            <div class="section-title">
-                <h2>Nos Projets</h2>
-                <p>Quelques exemples de domaines sur lesquels nous travaillons.</p>
-            </div>
 
-            <div class="projects">
+        <!-- ================= SERVICES ================= -->
 
-                <div class="project">
-                    <div class="project-image">🏠</div>
-                    <div class="project-content">
-                        <h3>Maison intelligente</h3>
+        <section id="services" class="section">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>Nos solutions</span>
+
+                    <h2>
+                        Des services technologiques
+                        adaptés à vos besoins
+                    </h2>
+
+                    <p>
+                        Nous proposons des solutions modernes pour les
+                        particuliers, entreprises et professionnels.
+                    </p>
+
+                </div>
+
+
+                <div class="services-grid">
+
+                    <article class="service-card">
+
+                        <div class="service-icon">📹</div>
+
+                        <h3>Vidéosurveillance</h3>
+
                         <p>
-                            Contrôle intelligent de l'éclairage,
-                            des appareils et des capteurs.
+                            Installation de caméras de surveillance,
+                            enregistreurs et systèmes de sécurité.
                         </p>
-                    </div>
-                </div>
 
-                <div class="project">
-                    <div class="project-image">🤖</div>
-                    <div class="project-content">
-                        <h3>Robotique</h3>
-                        <p>
-                            Projets éducatifs et robots programmables.
-                        </p>
-                    </div>
-                </div>
+                        <a href="#contact">En savoir plus →</a>
 
-                <div class="project">
-                    <div class="project-image">📡</div>
-                    <div class="project-content">
-                        <h3>IoT & ESP32</h3>
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-icon">🚨</div>
+
+                        <h3>Alarme & Sécurité</h3>
+
                         <p>
-                            Systèmes connectés et surveillance
-                            à distance.
+                            Solutions d'alarme et protection pour maisons,
+                            commerces et entreprises.
                         </p>
-                    </div>
+
+                        <a href="#contact">En savoir plus →</a>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-icon">🏠</div>
+
+                        <h3>Domotique</h3>
+
+                        <p>
+                            Automatisez votre maison avec des solutions
+                            intelligentes et connectées.
+                        </p>
+
+                        <a href="#contact">En savoir plus →</a>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-icon">🌐</div>
+
+                        <h3>Réseaux & IT</h3>
+
+                        <p>
+                            Installation et configuration de réseaux
+                            informatiques et infrastructures IT.
+                        </p>
+
+                        <a href="#contact">En savoir plus →</a>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-icon">🔌</div>
+
+                        <h3>Électronique</h3>
+
+                        <p>
+                            Arduino, ESP32, capteurs, modules et
+                            projets électroniques.
+                        </p>
+
+                        <a href="#shop">Voir les produits →</a>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-icon">☀️</div>
+
+                        <h3>Solutions Smart</h3>
+
+                        <p>
+                            IoT, automatisation et technologies intelligentes
+                            pour améliorer votre quotidien.
+                        </p>
+
+                        <a href="#contact">En savoir plus →</a>
+
+                    </article>
+
                 </div>
 
             </div>
-        </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-        <div class="container">
+        </section>
 
-            <div class="section-title">
-                <h2>Contactez-nous</h2>
-                <p>Vous avez un projet ? Parlons-en.</p>
+
+        <!-- ================= ABOUT ================= -->
+
+        <section id="about" class="section about">
+
+            <div class="container about-grid">
+
+                <div class="about-visual">
+
+                    <div class="about-box">
+
+                        <span>IdrissiTech</span>
+
+                        <strong>
+                            Technology
+                        </strong>
+
+                        <small>
+                            Innovation • Quality • Trust
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-text">
+
+                    <span class="section-label">
+                        À propos de nous
+                    </span>
+
+                    <h2>
+                        La technologie au service
+                        de vos projets.
+                    </h2>
+
+                    <p>
+                        IdrissiTech est une marque spécialisée dans les
+                        solutions technologiques, électroniques et
+                        intelligentes.
+                    </p>
+
+                    <p>
+                        Notre objectif est de proposer des solutions
+                        accessibles, modernes et adaptées aux besoins
+                        de chaque client.
+                    </p>
+
+                    <div class="about-list">
+
+                        <div>
+                            ✓ Solutions modernes
+                        </div>
+
+                        <div>
+                            ✓ Installation professionnelle
+                        </div>
+
+                        <div>
+                            ✓ Accompagnement personnalisé
+                        </div>
+
+                        <div>
+                            ✓ Support technique
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="contact-grid">
+        </section>
+
+
+        <!-- ================= PROJECTS ================= -->
+
+        <section id="projects" class="section">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>Nos réalisations</span>
+
+                    <h2>
+                        Quelques projets
+                    </h2>
+
+                    <p>
+                        Découvrez quelques exemples de solutions
+                        technologiques que nous pouvons réaliser.
+                    </p>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+                            📹
+                        </div>
+
+                        <div class="project-content">
+
+                            <span>Security</span>
+
+                            <h3>
+                                Système de vidéosurveillance
+                            </h3>
+
+                            <p>
+                                Installation complète d'un système
+                                de surveillance.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+                            🏠
+                        </div>
+
+                        <div class="project-content">
+
+                            <span>Domotique</span>
+
+                            <h3>
+                                Smart Home
+                            </h3>
+
+                            <p>
+                                Automatisation et contrôle intelligent
+                                de l'habitat.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+                            🤖
+                        </div>
+
+                        <div class="project-content">
+
+                            <span>Arduino</span>
+
+                            <h3>
+                                Projet IoT & Arduino
+                            </h3>
+
+                            <p>
+                                Développement de projets électroniques
+                                et objets connectés.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SHOP ================= -->
+
+        <section id="shop" class="section shop">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>IdrissiTech Shop</span>
+
+                    <h2>
+                        Électronique & Domotique
+                    </h2>
+
+                    <p>
+                        Découvrez prochainement notre sélection de produits
+                        Arduino, ESP32, capteurs et accessoires.
+                    </p>
+
+                </div>
+
+
+                <div class="shop-grid">
+
+                    <div class="shop-card">
+                        <div>🤖</div>
+                        <h3>Arduino</h3>
+                        <p>Cartes et accessoires Arduino.</p>
+                    </div>
+
+                    <div class="shop-card">
+                        <div>📡</div>
+                        <h3>ESP32 & IoT</h3>
+                        <p>Modules connectés et solutions IoT.</p>
+                    </div>
+
+                    <div class="shop-card">
+                        <div>🏠</div>
+                        <h3>Domotique</h3>
+                        <p>Produits pour maison intelligente.</p>
+                    </div>
+
+                    <div class="shop-card">
+                        <div>🔧</div>
+                        <h3>Composants</h3>
+                        <p>Capteurs, modules et composants électroniques.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section id="contact" class="section contact">
+
+            <div class="container contact-grid">
 
                 <div class="contact-info">
 
-                    <div>
-                        <h3>📍 Localisation</h3>
-                        <p>Kenitra, Maroc</p>
+                    <span class="section-label">
+                        Contact
+                    </span>
+
+                    <h2>
+                        Parlons de votre projet.
+                    </h2>
+
+                    <p>
+                        Vous avez un projet technologique ?
+                        Contactez-nous et discutons ensemble de la
+                        meilleure solution.
+                    </p>
+
+                    <div class="contact-item">
+                        📞
+                        <div>
+                            <strong>Téléphone</strong>
+                            <p>+212 6 XX XX XX XX</p>
+                        </div>
                     </div>
 
-                    <div>
-                        <h3>📧 Email</h3>
-                        <p>contact@idrissitech.com</p>
+                    <div class="contact-item">
+                        📧
+                        <div>
+                            <strong>Email</strong>
+                            <p>contact@idrissitech.com</p>
+                        </div>
                     </div>
 
-                    <div>
-                        <h3>📱 Téléphone</h3>
-                        <p>+212 XX XX XX XX</p>
+                    <div class="contact-item">
+                        📍
+                        <div>
+                            <strong>Localisation</strong>
+                            <p>Maroc</p>
+                        </div>
                     </div>
 
                 </div>
 
-                <form onsubmit="sendMessage(event)">
+
+                <form class="contact-form" id="contactForm">
 
                     <input
                         type="text"
@@ -729,43 +537,80 @@
                         required
                     >
 
+                    <input
+                        type="tel"
+                        placeholder="Votre téléphone"
+                    >
+
                     <textarea
-                        placeholder="Votre message"
+                        placeholder="Parlez-nous de votre projet..."
+                        rows="6"
                         required
                     ></textarea>
 
-                    <button class="btn btn-primary" type="submit">
+                    <button type="submit" class="btn primary">
                         Envoyer le message
                     </button>
 
                 </form>
 
             </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= WHATSAPP ================= -->
+
+    <a
+        href="https://wa.me/212600000000"
+        class="whatsapp"
+        target="_blank"
+        aria-label="Contact WhatsApp"
+    >
+        💬
+    </a>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div>
+                <div class="logo">
+                    Idrissi<span>Tech</span>
+                </div>
+
+                <p>
+                    Solutions technologiques & électroniques.
+                </p>
+            </div>
+
+            <div class="footer-links">
+
+                <a href="#home">Accueil</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projets</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
         </div>
-    </section>
 
-</main>
 
-<footer>
-    © 2026 <span>IdrissiTech</span> — Tous droits réservés.
-</footer>
+        <div class="copyright">
 
-<script>
+            © 2026 IdrissiTech — Tous droits réservés.
 
-    function toggleMenu() {
-        document.getElementById("nav").classList.toggle("active");
-    }
+        </div>
 
-    function sendMessage(event) {
-        event.preventDefault();
+    </footer>
 
-        alert(
-            "Merci pour votre message ! " +
-            "Le formulaire sera connecté à votre email dans la prochaine étape."
-        );
-    }
 
-</script>
+    <script src="script.js"></script>
 
 </body>
 </html>
